@@ -1,23 +1,32 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div>
+    <div v-for="person in persons" :key="person.id">
+      <h1 class="font-bold text-xl">name: {{ person.name }}</h1>
+      <h3>age: {{ person.age }}</h3>
     </div>
+    <div>
+      <h1 class="text-lg">name: {{ people.name }}</h1>
+      <h3>age: {{ people.age }}</h3>
+    </div>
+  </div>
 </template>
 
 <script>
-    export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+export default {
+  data() {
+    return{
+      persons: [
+        {name: 'name 1', age: '1',},
+        {name: 'name 2', age: '2',},
+        {name: 'name 3', age: '3',},
+        {name: 'name 4', age: '4',},
+      ],
+      people: {name: 'another name', age: '1'},
     }
+  }
+}
 </script>
+
+<style>
+
+</style>
